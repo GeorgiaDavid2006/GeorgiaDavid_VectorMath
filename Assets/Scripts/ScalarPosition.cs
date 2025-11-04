@@ -9,20 +9,20 @@ public class ScalarPosition : MonoBehaviour
 
     void Start()
     {
-        Vector3 startPos = gameObject.transform.position;
+        startPos = new Vector3(0f, 1f, 0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            
+            scalar = scalar + step;
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.S))
         {
-            
+            scalar = scalar - step;
         }
 
         gameObject.transform.position = startPos * scalar;
